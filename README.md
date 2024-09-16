@@ -19,7 +19,7 @@ NoBS Planner is a full-stack web application designed to manage and organize tas
 - SQL Server: For database management.
 ## Setup Instructions
 - Clone the Repository 
-`git clone https://github.com/yourusername/NoBSPlanner.git`
+`git clone https://github.com/A-mardi/NoBSPlanner.git`
 
 - Install Dependencies Navigate to the project directory and restore the required packages.
 `dotnet restore`
