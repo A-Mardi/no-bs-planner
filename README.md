@@ -8,7 +8,7 @@ NoBS Planner is a full-stack web application designed to manage and organize tas
 - Edit Planner Items: Modify existing tasks.
 - Delete Planner Items: Remove tasks from the planner.
 ## Tech Stack
-- Frontend: Razor Pages with Bootstrap/Tailwind CSS for styling.
+- Frontend: Razor Pages with Tailwind CSS for styling.
 - Backend: .NET Core (ASP.NET Core) for API handling.
 - Authentication: JWT for user authentication and authorization.
 - Database: SQL Server using Entity Framework Core for data management.
