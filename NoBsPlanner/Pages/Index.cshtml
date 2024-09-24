@@ -1,14 +1,20 @@
 ﻿@page
 @model NoBSPlanner.Pages.IndexModel
-<link href="~/css/site.css" rel="stylesheet" />
+<link href="~/tailwind.css" rel="stylesheet" />
 
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<nav class="bg-gray-800 p-4">
+    <div class="container mx-auto">
+        <a href="/" class="text-white font-bold">NoBS Planner</a>
+    </div>
+</nav>
 
+<h1 class="text-3xl font-bold mb-4">Index</h1>
+<br />
 <p>
     <a asp-page="Create">Create New</a>
 </p>
