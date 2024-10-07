@@ -1,0 +1,6 @@
+@nobstester.Server_HostAddress = http://localhost:5258
+
+GET {{nobstester.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

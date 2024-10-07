@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>No BS Tasker</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="/lib/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: #e9ecef; /* Slightly darker gray for contrast */
+        }
+
+        .card {
+            border: none; /* No border */
+            border-radius: 0.5rem; /* Rounded corners */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+
+        .card-header {
+            background-color: #007bff; /* Bootstrap primary color */
+            color: white; /* White text */
+            font-weight: bold; /* Bold text */
+            font-size: 1.25rem; /* Larger font size */
+            border-top-left-radius: 0.5rem; /* Round top left */
+            border-top-right-radius: 0.5rem; /* Round top right */
+        }
+
+        .form-control {
+            border-radius: 0.25rem; /* Rounded input fields */
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Light inner shadow */
+        }
+
+        .btn-primary {
+            background-color: #28a745; /* Green button color */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for button */
+            font-size: 1rem; /* Consistent font size */
+            border-radius: 0.25rem; /* Rounded button */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+            .btn-primary:hover {
+                background-color: #218838; /* Darker shade on hover */
+            }
+
+        .font-weight-bold {
+            font-weight: 600; /* Slightly less bold */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center">
+                Student Information
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-3 text-right font-weight-bold">ID:</div>
+                    <div class="col-3 text-left" id="id"></div>
+                    <div class="col-3 text-right font-weight-bold">Description:</div>
+                    <div class="col-3 text-left" id="description"></div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-3 text-right font-weight-bold">Date:</div>
+                    <div class="col-9 text-left" id="date"></div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-3 text-right font-weight-bold">Completed:</div>
+                    <div class="col-9 text-left" id="completed"></div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-3 font-weight-bold">Name:</div>
+                    <div class="col-9">
+                        <input type="text" placeholder="Enter task name" id="TextBoxname" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <button class="btn btn-primary" id="getbutton">Find Task</button>
+                <div id="status" class="text-left mt-3 mb-2"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/lib/js/jquery.min.js"></script>
+    <script src="/lib/js/bootstrap.min.js"></script>
+    <script src="/js/taskLookup.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
