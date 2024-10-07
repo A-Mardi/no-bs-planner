@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoBSPlanner", "NoBsPlanner\NoBSPlanner.csproj", "{C72DD147-C79D-45F2-B26B-F24AFD240043}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nobsDAL", "H:\no-bs-tester\no-bs-tester\nobsDAL\nobsDAL.csproj", "{E9940F35-3736-405A-8297-924FFF67693F}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "nobstester.client", "H:\no-bs-tester\no-bs-tester\nobstester.client\nobstester.client.esproj", "{67C28CC8-46DE-4D0A-84AC-23D753D10848}"
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C72DD147-C79D-45F2-B26B-F24AFD240043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C72DD147-C79D-45F2-B26B-F24AFD240043}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C72DD147-C79D-45F2-B26B-F24AFD240043}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C72DD147-C79D-45F2-B26B-F24AFD240043}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E9940F35-3736-405A-8297-924FFF67693F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E9940F35-3736-405A-8297-924FFF67693F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9940F35-3736-405A-8297-924FFF67693F}.Release|Any CPU.ActiveCfg = Release|Any CPU
