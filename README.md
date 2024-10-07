@@ -1,8 +1,8 @@
 ![Screenshot 2024-10-07 111743](https://github.com/user-attachments/assets/31e319b9-6494-4874-a469-0a1a12e1fcb1)
 
-# No BS Tasker
+# No BS Planner
 ## Project Overview
-No BS Tasker is a full-stack web application designed to manage and organize tasks. this app allows users to create, view, edit, and delete tasks.
+No BS Planner is a full-stack web application designed to manage and organize tasks. this app allows users to create, view, edit, and delete tasks.
 
 This project was initially implemented with .NET for the backend, SQL Server for data storage, and Razor Pages for the frontend, utilizing Docker for containerization and deployment via Doku.
 
