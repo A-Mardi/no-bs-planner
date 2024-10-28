@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -17,7 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\nobsViewModels\nobsViewModels.csproj" />
+    <ProjectReference Include="C:\Users\Ahmed Mardi\Downloads\no-bs-planner-main\no-bs-planner-main\nobsDAL\nobsDAL.csproj" />
+    <ProjectReference Include="C:\Users\Ahmed Mardi\Downloads\no-bs-planner-main\no-bs-planner-main\nobsViewModels\nobsViewModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>

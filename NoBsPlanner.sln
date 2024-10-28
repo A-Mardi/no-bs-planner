@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nobstester.Server", "H:\no-bs-tester\no-bs-tester\nobstester.Server\nobstester.Server.csproj", "{3507AEB2-B1F4-4DA2-B64E-C479AD33E6D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nobstester.Server", "nobstester.Server\nobstester.Server.csproj", "{3507AEB2-B1F4-4DA2-B64E-C479AD33E6D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nobsTests", "H:\no-bs-tester\no-bs-tester\NobsTests\nobsTests.csproj", "{420C9951-960A-4C97-AB99-BE0724FB0563}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nobsTests", "NobsTests\nobsTests.csproj", "{420C9951-960A-4C97-AB99-BE0724FB0563}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "nobstester.client", "nobstester.client\nobstester.client.esproj", "{09CEBD24-D4EE-45E9-A9AB-7D399AF1C3DB}"
 EndProject

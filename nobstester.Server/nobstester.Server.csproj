@@ -17,8 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\nobstester.client\nobstester.client.esproj" />
-    <ProjectReference Include="..\nobsViewModels\nobsViewModels.csproj" />
+    <ProjectReference Include="C:\Temp\NoBSPlanner\no-bs-planner\nobstester.client\nobstester.client.esproj" />
+    <ProjectReference Include="C:\Temp\NoBSPlanner\no-bs-planner\nobsViewModels\nobsViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
 </Project>

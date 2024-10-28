@@ -28,7 +28,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Move this line before app.UseAuthorization() and app.MapControllers()
 app.UseCors("AllowAllOrigins"); // Ensure CORS is applied here
 
 app.UseHttpsRedirection();
