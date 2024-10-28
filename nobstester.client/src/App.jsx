@@ -1,92 +1,85 @@
-// src/App.jsx
 import { useState, useEffect } from 'react';
-import API_BASE_URL from './config';
-import TaskList from './TaskList';
-import TaskFilter from './TaskFilter';
-import TaskForm from './TaskForm';
 import './App.css';
+import TaskList from './TaskList'; // Ensure you have this import
+import TaskForm from './TaskForm'; // Make sure to import your TaskForm
 
 function App() {
     const [tasks, setTasks] = useState([]);
-    const [currentTask, setCurrentTask] = useState(null);
-    const [filter, setFilter] = useState('all');
-
-    useEffect(() => {
-        fetchTasks();
-    }, []);
+    const [currentTask, setCurrentTask] = useState(null); // For editing a task
 
     const fetchTasks = async () => {
         try {
-            const res = await fetch(`${API_BASE_URL}/api/Task`);
+            const res = await fetch('https://localhost:7093/api/Task');
+            if (!res.ok) {
+                throw new Error('Network response was not ok');
+            }
             const data = await res.json();
+            console.log('Fetched tasks:', data);
             setTasks(data);
         } catch (error) {
             console.error('Error fetching tasks:', error);
         }
     };
 
-    const addTask = async (task) => {
+    const addTask = async (newTask) => {
         try {
-            const res = await fetch(`${API_BASE_URL}/api/Task`, {
+            const res = await fetch('https://localhost:7093/api/Task', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(task),
+                body: JSON.stringify(newTask),
             });
-            if (res.ok) {
-                fetchTasks(); // Refresh the list after adding
+            if (!res.ok) {
+                throw new Error('Network response was not ok');
             }
+            fetchTasks(); // Refresh tasks after adding
         } catch (error) {
             console.error('Error adding task:', error);
         }
     };
 
-    const deleteTask = async (id) => {
+    const deleteTask = async (taskId) => {
         try {
-            await fetch(`${API_BASE_URL}/api/Task/${id}`, {
+            await fetch(`https://localhost:7093/api/Task/${taskId}`, {
                 method: 'DELETE',
             });
-            fetchTasks(); // Refresh the list after deletion
+            fetchTasks(); // Refresh tasks after deletion
         } catch (error) {
             console.error('Error deleting task:', error);
         }
     };
 
-    const updateTask = async (task) => {
+    const updateTask = async (updatedTask) => {
         try {
-            const res = await fetch(`${API_BASE_URL}/api/Task/${currentTask.id}`, {
+            const res = await fetch(`https://localhost:7093/api/Task/${updatedTask.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(task),
+                body: JSON.stringify(updatedTask),
             });
-            if (res.ok) {
-                fetchTasks(); // Refresh the list after updating
-                setCurrentTask(null); // Reset current task
+            if (!res.ok) {
+                throw new Error('Network response was not ok');
             }
+            fetchTasks(); // Refresh tasks after updating
+            setCurrentTask(null); // Reset current task after updating
         } catch (error) {
             console.error('Error updating task:', error);
         }
     };
 
-    const filterTasks = () => {
-        if (filter === 'completed') {
-            return tasks.filter((task) => task.completed);
-        } else if (filter === 'notCompleted') {
-            return tasks.filter((task) => !task.completed);
-        }
-        return tasks;
+    const handleTaskUpdate = (task) => {
+        setCurrentTask(task);
     };
 
     return (
         <div>
             <h1>No BS Planner</h1>
-            <div className ="container">
-                <TaskFilter onFilterChange={setFilter} />
-                <TaskForm onSubmit={currentTask ? updateTask : addTask} currentTask={currentTask} />
-                <TaskList tasks={filterTasks()} onDelete={deleteTask} onUpdate={setCurrentTask} />
+            <TaskForm onSubmit={currentTask ? updateTask : addTask} currentTask={currentTask} />
+            <button onClick={fetchTasks}>Expand Tasks</button> {/* Button to fetch tasks */}
+            <div className="container">
+                <TaskList tasks={tasks} onDelete={deleteTask} onUpdate={handleTaskUpdate} />
             </div>
         </div>
     );

@@ -1,20 +1,19 @@
+// src/TaskList.jsx
 import React from 'react';
 
-const TaskList = ({ tasks, onDelete, onUpdate }) => {
+function TaskList({ tasks }) {
     return (
-        <div className="task-list">
-            <h2>Task List</h2>
-            <ul>
-                {tasks.map((task) => (
-                    <li key={task.id}>
-                        {task.name} - {task.completed ? 'Completed' : 'Not Completed'}
-                        <button onClick={() => onUpdate(task)}>Update</button>
-                        <button onClick={() => onDelete(task.id)}>Delete</button>
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <ul>
+            {tasks.map((task) => (
+                <li key={task.id}>
+                    <h2>{task.name}</h2>
+                    <p>{task.description}</p>
+                    <p>Due Date: {new Date(task.dueDate).toLocaleDateString()}</p>
+                    <p>Status: {task.isCompleted ? 'Completed' : 'Not Completed'}</p>
+                </li>
+            ))}
+        </ul>
     );
-};
+}
 
 export default TaskList;
