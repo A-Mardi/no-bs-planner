@@ -11,20 +11,20 @@ namespace nobsTests
     public class ViewModelsTests
     {
 
-        //[Fact]
-        //public async Task Task_AddTest()
-        //{
-        //    TaskViewModel vm;
-        //    vm = new()
-        //    {
-        //        Name = "Mr.",
-        //        Description = "Ahmed",
-        //        DueDate = DateTime.UtcNow.AddDays(7),
-        //        isCompleted = true,
-        //    };
-        //    await vm.Add();
-        //    Assert.True(vm.Id > 0);
-        //}
+        [Fact]
+        public async Task Task_AddTest()
+        {
+            TaskViewModel vm;
+            vm = new()
+            {
+                Name = "Mr.",
+                Description = "Ahmed",
+                DueDate = DateTime.UtcNow.AddDays(7),
+                isCompleted = true,
+            };
+            await vm.Add();
+            Assert.True(vm.Id > 0);
+        }
         [Fact]
         public async Task Student_GetByLastnameTest()
         {
@@ -34,24 +34,24 @@ namespace nobsTests
         }
 
 
-        //[Fact]
-        //public async Task Task_UpdateTest()
-        //{
-        //    TaskViewModel vm = new() { Name = "Homework" };
-        //    await vm.GetByName();
-        //    Console.WriteLine($"Description before update: {vm.Description}");
-        //    Console.WriteLine($"Name: {vm.Name}");
-        //    vm.Description = vm.Description == "Info5052" ? "Info5052 prep" : "Info5052";
+        [Fact]
+        public async Task Task_UpdateTest()
+        {
+            TaskViewModel vm = new() { Name = "Homework" };
+            await vm.GetByName();
+            Console.WriteLine($"Description before update: {vm.Description}");
+            Console.WriteLine($"Name: {vm.Name}");
+            vm.Description = vm.Description == "Info5052" ? "Info5052 prep" : "Info5052";
 
-        //    Assert.True(await vm.Update() == 1);
-        //}
+            Assert.True(await vm.Update() == 1);
+        }
 
-        //[Fact]
-        //public async Task Task_DeleteTest()
-        //{
-        //    TaskViewModel vm = new() { Name = "Ibrahime" };
-        //    await vm.GetByName(); // Student just added
-        //    Assert.True(await vm.Delete() == 1); // 1 student deleted
-        //}
+        [Fact]
+        public async Task Task_DeleteTest()
+        {
+            TaskViewModel vm = new() { Name = "Ibrahime" };
+            await vm.GetByName(); // Student just added
+            Assert.True(await vm.Delete() == 1); // 1 student deleted
+        }
     }
 }
