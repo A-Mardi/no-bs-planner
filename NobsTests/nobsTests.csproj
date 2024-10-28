@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="C:\Users\Ahmed Mardi\Downloads\no-bs-planner-main\no-bs-planner-main\nobsDAL\nobsDAL.csproj" />
-    <ProjectReference Include="C:\Users\Ahmed Mardi\Downloads\no-bs-planner-main\no-bs-planner-main\nobsViewModels\nobsViewModels.csproj" />
+    <ProjectReference Include="..\nobsDAL\nobsDAL.csproj" />
+    <ProjectReference Include="..\nobsViewModels\nobsViewModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>
