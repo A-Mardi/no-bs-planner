@@ -9,7 +9,7 @@ function App() {
 
     const fetchTasks = async () => {
         try {
-            const res = await fetch('https://localhost:7093/api/Task');
+            const res = await fetch('https://nobsbackend-cpf0bea5bxamcqfs.canadacentral-01.azurewebsites.net/api/Task');
             if (!res.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -23,7 +23,7 @@ function App() {
 
     const addTask = async (newTask) => {
         try {
-            const res = await fetch('https://localhost:7093/api/Task', {
+            const res = await fetch('https://nobsbackend-cpf0bea5bxamcqfs.canadacentral-01.azurewebsites.net/api/Task', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ function App() {
 
     const deleteTask = async (taskId) => {
         try {
-            await fetch(`https://localhost:7093/api/Task/${taskId}`, {
+            await fetch(`https://nobsbackend-cpf0bea5bxamcqfs.canadacentral-01.azurewebsites.net/api/Task/${taskId}`, {
                 method: 'DELETE',
             });
             fetchTasks(); // Refresh tasks after deletion
@@ -52,7 +52,7 @@ function App() {
 
     const updateTask = async (updatedTask) => {
         try {
-            const res = await fetch(`https://localhost:7093/api/Task/${updatedTask.id}`, {
+            const res = await fetch(`https://nobsbackend-cpf0bea5bxamcqfs.canadacentral-01.azurewebsites.net/api/Task/${updatedTask.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

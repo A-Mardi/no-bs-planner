@@ -14,7 +14,7 @@
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7093;http://localhost:5258",
+      "applicationUrl": "https://nobsbackend-cpf0bea5bxamcqfs.canadacentral-01.azurewebsites.net;http://localhost:5258",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
