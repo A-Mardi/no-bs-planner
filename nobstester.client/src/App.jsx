@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import './App.css';
-import TaskList from './TaskList'; 
-import TaskForm from './TaskForm'; 
+import TaskList from './TaskList';
+import TaskForm from './TaskForm';
 
 function App() {
     const [tasks, setTasks] = useState([]);
     const [currentTask, setCurrentTask] = useState(null);
+    const [isExpanded, setIsExpanded] = useState(false);
 
     // Fetch tasks
     const fetchTasks = async () => {
@@ -37,7 +38,7 @@ function App() {
             if (!res.ok) {
                 throw new Error('Network response was not ok');
             }
-            fetchTasks(); 
+            fetchTasks();
         } catch (error) {
             console.error('Error adding task:', error);
         }
@@ -68,8 +69,8 @@ function App() {
             if (!res.ok) {
                 throw new Error('Network response was not ok');
             }
-            fetchTasks(); 
-            setCurrentTask(null); 
+            fetchTasks();
+            setCurrentTask(null);
         } catch (error) {
             console.error('Error updating task:', error);
         }
@@ -80,11 +81,21 @@ function App() {
         setCurrentTask(task);
     };
 
+    // Toggle tasks visibility
+    const toggleTasks = () => {
+        if (isExpanded) {
+            setTasks([]);
+        } else {
+            fetchTasks();
+        }
+        setIsExpanded(!isExpanded);
+    };
+
     return (
         <div>
             <h1>No BS Planner</h1>
             <TaskForm onSubmit={currentTask ? updateTask : addTask} currentTask={currentTask} />
-            <button onClick={fetchTasks}>Expand Tasks</button> 
+            <button onClick={toggleTasks}>{isExpanded ? 'Minimize Tasks' : 'Expand Tasks'}</button>
             <div className="container">
                 <TaskList tasks={tasks} onDelete={deleteTask} onUpdate={handleTaskUpdate} />
             </div>
