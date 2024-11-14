@@ -121,7 +121,6 @@ namespace nobstester.Server.Controllers
             {
                 TaskViewModel viewmodel = new() { Id = id };
 
-                // Call the delete method
                 int result = await viewmodel.Delete();
 
                 if (result == 1){
@@ -137,7 +136,7 @@ namespace nobstester.Server.Controllers
             catch (Exception ex){
                 Debug.WriteLine("Problem in " + GetType().Name + " " +
                 MethodBase.GetCurrentMethod()!.Name + " " + ex.Message);
-                return StatusCode(StatusCodes.Status500InternalServerError); // Something went wrong
+                return StatusCode(StatusCodes.Status500InternalServerError); 
             }
         }
 

@@ -125,12 +125,12 @@ namespace nobsDAL
                     PlannerItem? currentTask = await _db.PlannerItems.FirstOrDefaultAsync(task => task.Id == updatedTask.Id);
                     if (currentTask == null)
                     {
-                        return 0; // Task not found
+                        return 0; 
                     }
 
                     // Update the currentTask with the values from updatedTask
                     _db.Entry(currentTask).CurrentValues.SetValues(updatedTask);
-                    taskUpdated = await _db.SaveChangesAsync(); // should return 1 if successful
+                    taskUpdated = await _db.SaveChangesAsync(); 
                 }
             }
             catch (Exception ex)

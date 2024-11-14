@@ -50,8 +50,8 @@ namespace nobsTests
         public async Task Task_DeleteTest()
         {
             TaskViewModel vm = new() { Name = "Ibrahime" };
-            await vm.GetByName(); // Student just added
-            Assert.True(await vm.Delete() == 1); // 1 student deleted
+            await vm.GetByName();
+            Assert.True(await vm.Delete() == 1); 
         }
     }
 }

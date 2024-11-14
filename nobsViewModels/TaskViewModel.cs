@@ -172,8 +172,8 @@ namespace nobsViewModels
                     isCompleted = isCompleted,
                     Description = Description,
                 };
-                updateStatus = -1; // start out with a failed state
-                updateStatus = Convert.ToInt16(await _taskDAO.Update(task)); // overwrite status
+                updateStatus = -1; 
+                updateStatus = Convert.ToInt16(await _taskDAO.Update(task)); 
             }
             catch (Exception ex)
             {
@@ -188,7 +188,6 @@ namespace nobsViewModels
         {
             try
             {
-                // dao will return # of rows deleted
                 return await _taskDAO.Delete(Id);
             }
             catch (Exception ex)
@@ -197,7 +196,8 @@ namespace nobsViewModels
                 MethodBase.GetCurrentMethod()!.Name + " " + ex.Message);
                 throw;
             }
-        }
+        }
+
 
     }
 }

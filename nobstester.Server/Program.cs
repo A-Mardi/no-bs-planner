@@ -1,6 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Allow CORS services to the container.
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllOrigins", builder =>
@@ -28,7 +28,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("AllowAllOrigins"); // Ensure CORS is applied here
+app.UseCors("AllowAllOrigins"); 
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
