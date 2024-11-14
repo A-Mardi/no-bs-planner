@@ -15,7 +15,6 @@ const certificateName = "reactapp1.client";
 const certFilePath = path.join(baseFolder, `${certificateName}.pem`);
 const keyFilePath = path.join(baseFolder, `${certificateName}.key`);
 
-// Skip HTTPS setup for now
 // if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
 //     if (0 !== child_process.spawnSync('dotnet', [
 //         'dev-certs',
@@ -31,7 +30,7 @@ const keyFilePath = path.join(baseFolder, `${certificateName}.key`);
 // }
 
 const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_HTTPS_PORT}` :
-    env.ASPNETCORE_URLS ? env.ASPNETCORE_URLS.split(';')[0] : 'http://localhost:7286'; // Change to HTTP
+    env.ASPNETCORE_URLS ? env.ASPNETCORE_URLS.split(';')[0] : 'http://localhost:7286'; 
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -49,7 +48,7 @@ export default defineConfig({
             }
         },
         port: 3000,
-        // Remove the HTTPS config section
+
         // https: {
         //     key: fs.readFileSync(keyFilePath),
         //     cert: fs.readFileSync(certFilePath),

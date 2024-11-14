@@ -1,4 +1,5 @@
-// src/TaskList.jsx
+/*TaskList.jsx*/
+
 import React from 'react';
 
 function TaskList({ tasks }) {

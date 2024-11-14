@@ -10,7 +10,7 @@ const TaskList = () => {
             .then(response => response.json())
             .then(data => {
                 setTasks(data);
-                setFilteredTasks(data); // Start with all tasks
+                setFilteredTasks(data); 
             })
             .catch(error => console.error('Error fetching tasks:', error));
     }, []);

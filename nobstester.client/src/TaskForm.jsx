@@ -1,27 +1,29 @@
+/*TaskForm.jsx*/
+
 import React, { useState, useEffect } from 'react';
 
 const TaskForm = ({ onSubmit, currentTask }) => {
     const [name, setName] = useState('');
-    const [description, setDescription] = useState(''); // New state for the description
+    const [description, setDescription] = useState(''); 
     const [date, setDate] = useState('');
 
     useEffect(() => {
         if (currentTask) {
             setName(currentTask.name);
-            setDescription(currentTask.description || ''); // Set description if currentTask has one
+            setDescription(currentTask.description || '');
             setDate(currentTask.date || '');
         } else {
             setName('');
-            setDescription(''); // Reset description
+            setDescription(''); 
             setDate('');
         }
     }, [currentTask]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit({ name, description, completed: false, date }); // Default completed to false
+        onSubmit({ name, description, completed: false, date }); 
         setName('');
-        setDescription(''); // Reset description after submission
+        setDescription(''); 
         setDate('');
     };
 
