@@ -54,11 +54,16 @@ npm run build
 - Deploy: Click Publish to deploy the application to Azure.
 
 ## Usage
-- Navigate to the Tasks Pages: Use the navigation links to access Create, View, Edit, and Delete pages.
-- Add Items: Go to the Create page, fill out the form, and submit it to add a new task.
-- View Items: Access the Index page to see a list of all tasks.
-- Edit Items: Go to the Edit page, make changes, and save them.
-- Delete Items: Access the Delete page and confirm the deletion of tasks.
+
+- Make sure to click on the backend hosted api ->> [No Bs Backend](https://nobsbackend-cpf0bea5bxamcqfs.canadacentral-01.azurewebsites.net/)
+
+        due to free service limitations on Azure, the backend cannot be set to 'always on'.
+- Visit the hosted frontend app ->> [No Bs Backend](https://calm-bush-08355fa0f.5.azurestaticapps.net/) for a bette user experience
+- Navigate to the Tasks Pages: Use the navigation links to access Task list.
+- Add Taks: fill out the form, and submit it to add a new task.
+- View Tasks: Press Expand to see a list of all tasks.
+- Edit Tasks: Press the Edit Button, make changes, and save them.
+- Delete Tasks: Press the Delete button and confirm the deletion of tasks.
 
   
 ## Troubleshooting
