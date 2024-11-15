@@ -1,8 +1,8 @@
-/*TaskList.jsx*/
+/* TaskList.jsx */
 
 import React from 'react';
 
-function TaskList({ tasks }) {
+function TaskList({ tasks, onDelete, onUpdate }) {
     return (
         <ul>
             {tasks.map((task) => (
@@ -11,6 +11,8 @@ function TaskList({ tasks }) {
                     <p>{task.description}</p>
                     <p>Due Date: {new Date(task.dueDate).toLocaleDateString()}</p>
                     <p>Status: {task.isCompleted ? 'Completed' : 'Not Completed'}</p>
+                    <button onClick={() => onUpdate(task)}>Edit</button>
+                    <button onClick={() => onDelete(task.id)}>Delete</button>
                 </li>
             ))}
         </ul>
