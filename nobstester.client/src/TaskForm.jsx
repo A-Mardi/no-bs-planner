@@ -4,27 +4,26 @@ import React, { useState, useEffect } from 'react';
 
 const TaskForm = ({ onSubmit, currentTask }) => {
     const [name, setName] = useState('');
-    const [description, setDescription] = useState(''); 
+    const [description, setDescription] = useState('');
     const [date, setDate] = useState('');
+    const [isCompleted, setIsCompleted] = useState(false);
 
     useEffect(() => {
         if (currentTask) {
             setName(currentTask.name);
-            setDescription(currentTask.description || '');
-            setDate(currentTask.date || '');
-        } else {
-            setName('');
-            setDescription(''); 
-            setDate('');
+            setDescription(currentTask.description);
+            setDate(currentTask.dueDate ? currentTask.dueDate.split('T')[0] : '');
+            setIsCompleted(currentTask.isCompleted);
         }
     }, [currentTask]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit({ name, description, completed: false, date }); 
+        onSubmit({ name, description, isCompleted, dueDate: date });
         setName('');
-        setDescription(''); 
+        setDescription('');
         setDate('');
+        setIsCompleted(false);
     };
 
     return (
@@ -38,8 +37,7 @@ const TaskForm = ({ onSubmit, currentTask }) => {
                     required
                 />
                 <textarea
-                    placeholder="Task 
-description"
+                    placeholder="Task description"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     required
