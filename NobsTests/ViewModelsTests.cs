@@ -17,10 +17,10 @@ namespace nobsTests
             TaskViewModel vm;
             vm = new()
             {
-                Name = "Mr.",
-                Description = "Ahmed",
+                Name = "Info5052",
+                Description = "test",
                 DueDate = DateTime.UtcNow.AddDays(7),
-                isCompleted = true,
+                isCompleted = false,
             };
             await vm.Add();
             Assert.True(vm.Id > 0);
